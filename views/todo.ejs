@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+<body>
+
+<h1><%= title %></h1>
+
+<ul>
+  <li>
+    <form method="post" action="/edit-todo/<%= todo.id %>">
+      <input type="text" name="title" value="<%= todo.title %>">
+      <button type="submit">Uložit změny</button>
+    </form>
+    <a href="/remove-todo/<%= todo.id %>"> | odebrat</a>
+    <a href="/toggle-todo/<%= todo.id %>"> | 
+      <%= todo.done ? 'hotovo' : 'nehotvo' %>
+    </a>
+  </li>
+</ul>
+
+<a href="/">Domů</a>
+
+</body>
+</html>
